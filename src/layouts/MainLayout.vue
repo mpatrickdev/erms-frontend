@@ -28,14 +28,24 @@
         <q-item-label
           header
         >
-          Essential Links
+          Navigation
         </q-item-label>
+        <q-item
+          to="/"
+          clickable>
+          <q-item-section avatar>
+            <q-icon name="home"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Home</q-item-label>
+          </q-item-section>
+        </q-item>
 
-        <EssentialLink
+        <!-- <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
-        />
+        /> -->
       </q-list>
     </q-drawer>
 
@@ -51,10 +61,10 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
+    title: 'Home',
+    // caption: 'quasar.dev',
     icon: 'school',
-    link: 'https://quasar.dev'
+    route: {name: 'home'}
   },
   {
     title: 'Github',
